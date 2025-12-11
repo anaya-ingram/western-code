@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='../css/main.css'>
+  </head>
+  <body class='bg-two'>
+    <div class='mynav'>
+      <ul>
+        <li><a href='./index.html'>home</a></li>
+        <li><a href='./page2.html'>about</a></li>
+        <li><a href='./page3.html'>prep & tryouts</a></li>
+        <li><a href='./page4.html'>cheer links</a></li>
+      </ul>
+    </div>
+    <div class='page-content'>
+      <h1 id='important1'>Cheer links</h1>
+      <div class='link-container'>
+        <a href='https://cheerupdates.com/' target='_blank'>Cheer Updates</a>
+      </div>
+      <div class='link-container'>
+        <a href='https://tv.varsity.com/' target='_blank'>Varsity TV</a>
+      </div>
+      <div class='link-container'>
+        <a href='https://usacheer.org/' target='_blank'>USA Cheer</a>
+      </div>
+      <h1>Cheer survey</h1>
+        <p id='important2'>Take my survey!</p>
+        <form class='cheer-survey-form'>
+          <fieldset>
+            <legend>Share your cheer experience</legend>
+            <div class='form-group'>
+              <label for='name' class='bold-label'>Your name:</label>
+              <input type='text' id='name' />
+            </div>
+            <div class='form-group'>
+              <h4>Your position:</h4>
+              <input type='radio' id='backspot' value='backspot' name='position' />
+              <label for='backspot'>Backspot</label>
+              <input type='radio' id='base' value='base' name='position' />
+              <label for='base'>Base</label>
+              <input type='radio' id='flyer' value='flyer' name='position' />
+              <label for='flyer'>Flyer</label>
+            </div>
+            <div class='form-group'>
+              <h4>Your favorite part of the routine:</h4>
+              <select id='favorite-part'>
+                <option value='dance'>Dance</option>
+                <option value='pyramid'>Pyramid</option>
+                <option value='elites'>Elites</option>
+                <option value='tumbling'>Tumbling</option>
+                <option value='baskets'>Baskets</option>
+              </select>
+            </div>
+            <div class='form-group'>
+              <label for='change' class='bold-label'>What would you change about cheer?</label>
+              <br />
+              <textarea id='change' placeholder='Enter your suggestion'></textarea>
+            </div>
+            <button type='submit'>Submit</button>
+          </fieldset>
+        </form>
+    </div>
+  </body>
+</html>
