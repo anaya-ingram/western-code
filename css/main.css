@@ -24,7 +24,8 @@ body {
 
 h1 {
   color: #2b3438;
-  font-size: 4rem;
+  font-size: 3.5rem;
+  line-height: 1.2;
   margin-block: 2rem;
 }
 
@@ -35,7 +36,7 @@ h1#important1 {
 
 h2 {
   color: #001f3f;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-block: 1.5rem;
 }
 
@@ -55,36 +56,47 @@ p#important2:hover {
 .mynav {
   align-items: center;
   background-color: #323233;
-  display: flex;                      /* Rule 1: Organize your Navigation bar as a flexbox. */
-  height: 100px;                      /* Rule 4: Make your navigation < div> 100 pixels tall with a black background. */
-  justify-content: center;            /* this tells the nav that you want the links to be centered horizontally */
-  left: 0;                            /* this tells the nav that you want it to be zero pixels from the left of the screen */
-  position: fixed;                    /* Rule 2: Use a position rule to make your navigation bar fixed (so it is always visible as you scroll on your page). */
-  right: 0;                           /* this tells the nav that you want it to be zero pixels from the right of the screen */
-  top: 0;                             /* this tells the nav that you want it to be zero pixels from the top of the screen */
-}                                     /* the reason for using both left:0 and right:0 is to make the navigation go the full width of the screen. */
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
 
 .mynav ul {
-  display: flex;                      /* Rule 3: Change the links in your navigation to be inline using CSS (i.e. the links between your web pages should be in a single row now). */
-  list-style-type: none;              /* this tells the nav that you want the bullets to be removed from the list */
-  margin: 0;                          /* I removed the margin and padding so that the nav would be exactly 100px tall per the instructions */
+  display: flex;
+  list-style-type: none;
+  margin: 0;
   padding: 0;
+}
+
+@media (max-width: 540px) {
+  .mynav {
+    height: 150px;
+    justify-content: flex-start;
+  }
+
+  .mynav ul {
+    flex-direction: column;
+  }
 }
 
 .mynav a {
   color: #ffffff;
-  text-decoration: none;              /* this tells the nav that you want the links to have no underline */
-  margin: 0 15px;                     /* this tells the nav that you want the links to 15 pixels of space between them */
-  font-size: 1.2em;                   /* this value was already here so I left it */
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1rem;
 }
 
 .mynav a:hover {
-  color: #f708d3;                   /* this sets the font color of the links to be pink when you hover them */
+  color: #f708d3;
 }
 
 .page-content {
-  margin-top: 100px;                  /* the margin at the top is because the navigation is 100px tall and if you leave this out, the top 100 pixels of content will be hidden behind the black nav bar */
-  padding: 30px;                      /* this adds 30px of padding to the top, right, bottom, and left of the page content */
+  margin-top: 100px;
+  padding: 30px;
 }
 
 .link-container a {
@@ -95,10 +107,10 @@ p#important2:hover {
   color: #0123a2;
 }
 
-#about-section {                                        /* Rule 8: Use a border image on some element other than the navigation. Use a new image, not the one from examples. */
-  border: 40px solid transparent;                       /* this is the border around the about section. The transparent part is so that the image can show through the border */
-  padding: 20px;                                        /* this is the padding around the about section. The padding is the space between the content and the border */
-  border-image: url("../images/pompom.webp") 60 round;  /* this is the image used for the border. The 60 is the thickness of the border and the round is the shape of the border. */
+#about-section {
+  border: 40px solid transparent;
+  padding: 20px;
+  border-image: url("../images/pompom.webp") 60 round;
   background-color: #ffffff;
 }
 
@@ -107,16 +119,15 @@ ul > li {
   font-size: 1em;
 }
 
-/* Rule 3: Add a background image to all pages (can all be same image). Should be some image that looks good with your overall theme. It should remain fixed in place as the user scrolls. */
 .bg-one {
-  background-image: url('../images/cheer-bg2.png');   /* this is the background image for the first and third pages */
-  background-size: cover;                             /* this tells the background image to cover the entire background of the page */
-  background-position: bottom;                        /* this tells the background image to be positioned at the bottom of the page */
-  background-attachment: fixed;                       /* this tells the background image to be fixed in place and not move when you scroll the page */
+  background-image: url('../images/cheer-bg2.png');
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
 }
 
 .bg-two {
-  background-image: url('../images/cheer-bg.png');     /* this is the background image for the second and fourth page */
+  background-image: url('../images/cheer-bg.png');
   background-size: contain;
   background-position: center;
   background-attachment: fixed;
@@ -125,32 +136,17 @@ ul > li {
 
 .cheer-survey-form {
   background-color: #ffffff;
-  padding: 20px;                          /* this is the padding around the form. The padding is the space between the content and the border */
-  border-radius: 10px;                    /* this is what makes the rounded corners on the form */
-  width: 600px;                           /* this is the width of the form. */
+  border-radius: 10px;
+  width: 440px;
 }
 
 .form-group {
-  padding: 16px 0;                        /* this adds 16px of padding to the top and bottom of each form group. Each section of the form is grouped with this class. */
+  padding: 16px 0;
 }
 
 input[type='text'],
 textarea {
-  width: 400px;                           /* this is the width of the inputs and the textarea. */
-  padding: 8px 12px;                      /* this is the padding around the inputs and the textarea so that the text has room around it. it's 8px on top & bottom and 12px at the beginning and end */
-  border: 1px solid #323233;            /* this gives the inputs & textarea a 1 pixel solid border that's dark gray */
-  border-radius: 4px;                     /* this is what makes the rounded corners on the inputs and the textarea */
-  font-size: 14px;
-  font-family: 'Verdana', sans-serif;
-
-  &:focus {
-    outline: #f708d3;                    /* Rule 5: Add a pseudo-class focus rule to do something on your FORM example page. */
-    border: 1px solid #f708d3;
-  }
-}
-
-select {
-  width: 400px;                           /* this is the width of the select (the dropdown) */
+  width: 400px;
   padding: 8px 12px;
   border: 1px solid #323233;
   border-radius: 4px;
@@ -163,9 +159,22 @@ select {
   }
 }
 
-/* Rule 6: Make sure your FORM example page has a submit button. Add a noticeable style change when the user hovers over the submit button. */
+select {
+  width: 400px;
+  padding: 8px 12px;
+  border: 1px solid #323233;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'Verdana', sans-serif;
+
+  &:focus {
+    outline: #f708d3;
+    border: 1px solid #f708d3;
+  }
+}
+
 button {
-  background-color: #323233;              /* this is the background color of the button. it's dark gray. */
+  background-color: #323233;
   color: #ffffff;
   padding: 8px 12px;
   border-radius: 6px;
@@ -200,9 +209,18 @@ fieldset {
   width: 50%;
 }
 
+@media (max-width: 800px) {
+  .two-column {
+    flex-direction: column;
+  }
+  .column {
+    width: 100%;
+  }
+}
+
 .right-column {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
